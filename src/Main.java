@@ -1,6 +1,5 @@
 import Service.CalculatorService;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -10,9 +9,12 @@ public class Main {
         System.out.println("Введите математическую операцию " +
                 "в формате Аргумент1 действие(+, -, /, *) Аргумент2 (например 2+2) :");
         String arithmeticOperation = scanner.nextLine();
-        CalculatorService.Calculator(arithmeticOperation);
+        String operation = CalculatorService.arithmeticOperationCheck(arithmeticOperation);
+        if ((arithmeticOperation.replaceAll("[+\\-*/]", "").matches("\\d+"))) {
+            System.out.println(arithmeticOperation + "= " + CalculatorService.calculator(operation));
+        } else {
+            Integer result = CalculatorService.calculator(operation);
+            System.out.println(arithmeticOperation + "= " + CalculatorService.convertToRoman(result));
+        }
     }
-
 }
-
-
