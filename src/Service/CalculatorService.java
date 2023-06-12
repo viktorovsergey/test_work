@@ -35,6 +35,7 @@ public class CalculatorService {
         }
         return marker;
     }
+
     public static void Calculator(String s) {
         String marker = CalculatorService.operatorSearch(s);
         String[] arguments = s.split("\\" + marker);
