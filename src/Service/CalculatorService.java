@@ -35,6 +35,7 @@ public class CalculatorService {
               /* проверка на соответствие операндов одной сиситемы исчисления
               и перевод операндов из Римской системы исчисления в арабскую для проведения дальнейших операций*/
         }
+
         return operation;
     }
     /* метод, который переводит из Римской системы счисления в арабскую*/
@@ -98,6 +99,8 @@ public class CalculatorService {
         String marker = operatorSearch(s);
         String[] arguments = s.split("\\" + marker);
         String result = "";
+        if (Integer.parseInt(arguments[0])<0||Integer.parseInt(arguments[0])>10||
+                Integer.parseInt(arguments[1])<0||Integer.parseInt(arguments[1])>10) throw new WrongDataRange();
         if (marker == "+") {
             result = "" + (Integer.parseInt(arguments[0]) + Integer.parseInt(arguments[1]));
         } else {
