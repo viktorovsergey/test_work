@@ -46,6 +46,7 @@ public class CalculatorService {
         map.put("V", 5);
         map.put("IX", 9);
         map.put("X", 10);
+        map.put("L", 50);
         int result = 0;
         int i = 0;
         while (i < s.length()) {
@@ -63,8 +64,8 @@ public class CalculatorService {
 
     /*метод, переводящий из арабской системы счисления в римскую*/
     public static String convertToRoman(int num) {
-        String[] roman = {"X", "IX", "V", "IV", "I"};
-        int[] arabic = {10, 9, 5, 4, 1};
+        String[] roman = {"L","X", "IX", "V", "IV", "I"};
+        int[] arabic = {50,10, 9, 5, 4, 1};
         StringBuilder result = new StringBuilder();
         int i = 0;
         while (num > 0) {
@@ -121,7 +122,7 @@ public class CalculatorService {
                     result = "" + Integer.valueOf((int) (arg0 / arg1));
 
                 } else {
-                    result = "" + (Integer.parseInt(arguments[0]) / Integer.parseInt(arguments[1]));
+                    result = "" + (Integer.parseInt(arguments[0]) * Integer.parseInt(arguments[1]));
 
                 }
             }
